@@ -1,0 +1,20 @@
+import numpy as np
+
+x = []
+
+f = open("locationdata.csv", "r")
+
+for line in f:
+    a = line.split()
+    a = [float(n) for n in a]
+    x.append(a)
+    
+X = np.array(x)
+
+Y = np.loadtxt("locationdata.csv")
+
+if np.all((X==Y)):
+    print("TRUE")
+    
+else:
+    print("FALSE")
